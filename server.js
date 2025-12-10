@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const connection = require('./database/connection'); // importa la connessione
 const PORT = 3000
 const moviesRouter = require('./routes/movies')
 
