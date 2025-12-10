@@ -4,7 +4,8 @@
     "mysql2": "^3.15.3"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "node --watch server.js"
   },
   "name": "webapp-express",
   "description": "1. create a database connection test\r 2. CRUD: router + conroller\r 3. add bodyparser\r 4. add midddleware assets statici\r 5. add middlewere notfound and server error",
