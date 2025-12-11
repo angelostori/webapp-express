@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const PORT = 3000
 const moviesRouter = require('./routes/movies')
+const serverError = require('./middlewares/serverError')
+const notFound = require('./middlewares/notFound')
 
 // register body parser
 app.use(express.json())
@@ -15,6 +17,10 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/movies', moviesRouter)
+
+app.use(serverError)
+
+app.use(notFound)
 
 app.listen(PORT, () => {
     console.log(`Server avviato su http://localhost:${PORT}`);
