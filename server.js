@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors')
 const app = express();
 const PORT = 3000
 const moviesRouter = require('./routes/movies')
@@ -11,6 +12,11 @@ app.use(express.json())
 
 // register static assets
 app.use(express.static('public'))
+
+// middleware per il CORS
+app.use(cors({
+    origin: 'http://localhost:5173'
+}))
 
 app.get('/', (req, res) => {
     res.send('Server attivo!');
